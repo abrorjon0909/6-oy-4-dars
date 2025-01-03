@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+
 function App() {
   const [name, setName] = useState("");
   const [names, setNames] = useState([]);
@@ -17,10 +18,6 @@ function App() {
     setName("");
   };
 
-  const handleAddInput = () => {
-    setInputs([...inputs, ""]);
-  };
-
 
   const handleCalculate = (operation) => {
     const n1 = parseFloat(num1);
@@ -30,8 +27,12 @@ function App() {
     }
   };
 
+  const changeBackgroundColor = (color) => {
+    setBgColor(color);
+  };
+
   return (
-    <div className="container">
+    <div className="container" style={{ backgroundColor: bgColor }}>
       {/* Ismlar ro'yxati */}
       <h3>Ismlar ro'yxati</h3>
       <input
@@ -87,7 +88,7 @@ function App() {
       <input
         type="color"
         value={bgColor}
-        onChange={(e) => setBgColor(e.target.value)}
+        onChange={(e) => changeBackgroundColor(e.target.value)}
       />
 
       <hr />
