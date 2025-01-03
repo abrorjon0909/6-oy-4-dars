@@ -1,0 +1,30 @@
+.container {
+    font-family: serif;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.input-1 {
+    border: 2px solid black;
+    border-radius: 8px;
+    transition: 0.4s;
+    padding: 5px;
+}
+.input-1:hover {
+    background-color: antiquewhite;
+}
+.button-1 {
+    padding: 5px;
+    border-radius: 8px;
+    margin-left: 10px;
+    background-color: aquamarine;
+    transition: 0.3s;
+}
+.button-1:hover {
+    background-color: aqua;
+    border: 4px solid rgb(21, 71, 54);
+}
+
+.selects {
+    padding: 5px;
+}
