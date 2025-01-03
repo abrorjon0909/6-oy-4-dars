@@ -21,28 +21,12 @@ function App() {
     setInputs([...inputs, ""]);
   };
 
-  const handleInputChange = (index, value) => {
-    const newInputs = [...inputs];
-    newInputs[index] = value;
-    setInputs(newInputs);
-  };
 
   const handleCalculate = (operation) => {
     const n1 = parseFloat(num1);
     const n2 = parseFloat(num2);
     if (!isNaN(n1) && !isNaN(n2)) {
       setResult(operation === "add" ? n1 + n2 : n1 * n2);
-    }
-  };
-
-  const handleSubmitForm = (e) => {
-    e.preventDefault();
-    if (!userInfo.name || !userInfo.email || !userInfo.phone) {
-      alert("Iltimos, barcha maydonlarni to‘ldiring!");
-    } else if (!terms) {
-      alert("Shartlarga rozilik belgilang!");
-    } else {
-      console.log("Ma’lumotlar yuborildi:", userInfo);
     }
   };
 
@@ -105,25 +89,6 @@ function App() {
         value={bgColor}
         onChange={(e) => setBgColor(e.target.value)}
       />
-
-      <hr />
-
-      {/* Dinamik input qo'shish */}
-      <h3>Dinamik inputlar</h3>
-      <button className="button-1" onClick={handleAddInput}>
-        Input qo'shish
-      </button>
-      {inputs.map((input, i) => (
-        <input
-          className="input-1"
-          key={i}
-          value={input}
-          onChange={(e) => handleInputChange(i, e.target.value)}
-        />
-      ))}
-      <button className="button-1" onClick={() => console.log(inputs)}>
-        Yuborish
-      </button>
 
       <hr />
 
